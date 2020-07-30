@@ -40,7 +40,6 @@ function Job({ job }) {
             variant="primary"
           >
             {open ? "Hide Details" : "View Details"}
-            View Details
           </Button>
         </Card.Text>
         <Collapse in={open}>
