@@ -60,6 +60,7 @@ export default function useFetchJobs(params, page) {
         dispatch({
           type: ACTIONS.UPDATE_HAS_NEXT_PAGE,
           payload: { hasNextPage: res.data.length !== 0 },
+          // ^^^ if the data exists
         });
       })
       .catch((e) => {
@@ -70,6 +71,7 @@ export default function useFetchJobs(params, page) {
     return () => {
       cancelToken1.cancel();
       cancelToken2.cancel();
+      // ^^^ 2 cancel tokens for each request
     };
   }, [params, page]);
 
